@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	font-family: "Manrope", sans-serif;
+	font-size: 28px;
+
+	--primary-color: hsl(193, 38%, 86%);
+	--accent-color: hsl(150, 100%, 66%);
+	--accent-color-shadow: rgba(82, 255, 169, 0.5);
+	--background-color-1: hsl(217, 19%, 38%);
+	--background-color-2: hsl(217, 19%, 24%);
+	--background-color-3: hsl(218, 23%, 16%);
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	margin: 0;
+	background: var(--background-color-3);
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	background: var(--background-color-2);
+	width: min(90%, 19.25rem);
+	padding: 1rem;
+	border-radius: 0.5em;
+	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.img-fluid {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.card-header > h1 {
+	padding: 0;
+	margin: 0;
+	font-size: 0.5rem;
+	color: var(--accent-color);
+	font-weight: 600;
+	letter-spacing: 0.125rem;
+	padding-top: 1rem;
+}
+
+.card-body > p {
+	color: var(--primary-color);
+	font-weight: 800;
+	padding: 0 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.card-divider {
+	margin-bottom: 0.5rem;
+}
+
+.card-footer {
+	position: relative;
+	width: 100%;
+	height: 1rem;
+}
+
+.btn-dice {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border: none;
+	border-radius: 50%;
+	background: var(--accent-color);
+	padding: 0.75rem;
+	transition: box-shadow 100ms ease-in-out;
+	cursor: pointer;
+}
+
+.btn-dice:hover {
+	box-shadow: 0 0 20px 7px var(--accent-color-shadow);
+}
+
+.btn-dice.animate img {
+	animation: dice-roll 500ms linear infinite;
+}
+
+@keyframes dice-roll {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(365deg);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.divider {
+		content: url("./images/pattern-divider-desktop.svg");
+	}
+}
