@@ -1,4 +1,4 @@
-const btn = document.querySelector("[roll-dice]");
+const btn = document.querySelector("[data-roll-dice]");
 const id = document.querySelector("[data-id]");
 const content = document.querySelector("[data-content");
 
